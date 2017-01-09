@@ -1,0 +1,4 @@
+  In F:/Development/GitHub/delebash/nodewebkit/nw.Xbox.Music.Player-master/node_modules/nw-builder/lib/downloader.js
+  Set
+
+  rq.proxy = false;
