@@ -1,8 +1,9 @@
 {
-  "name": "webmusicplayer",
+  "name": "awebmusicplayer",
   "version": "0.1.0",
   "main": "index.html",
-  "inject_js_start": "./js/NWInit.js",
+  "single-instance":true,
+  "inject_js_start": "./js/init.js",
   "window": {
     "title": "webmusicplayer",
     "resizable": true,
@@ -13,7 +14,7 @@
   "webkit": {
     "plugin": true
   },
-  "chromium-args": "--load-plugin=ffmpegsumo.dll --child-clean-exit --disable-direct-composition --allow-running-insecure-content",
+  "chromium-args": "--load-plugin=ffmpegsumo.dll --disable-direct-composition --allow-running-insecure-content",
   "node-remote": "*://*"
   }
 

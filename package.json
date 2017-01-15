@@ -1,5 +1,5 @@
 {
-  "name": "webmusicplayer",
+  "name": "awebmusicplayer",
   "version": "0.1.0",
   "description": "",
   "keywords": [],
@@ -11,7 +11,7 @@
     "url": "https://github.com/delebash"
   },
   "nwjs": {
-    "version": "0.20.0-beta2",
+    "version": "0.19.5",
     "architecture": "win64",
     "flavor": "sdk"
   },
