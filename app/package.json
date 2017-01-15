@@ -5,7 +5,7 @@
   "single-instance": true,
   "window": {
     "title": "webmusicplayer",
-    "min_width": 800,
+    "min_width": 1200,
     "min_height": 600
   },
   "webkit": {
