@@ -16,8 +16,8 @@
     "flavor": "sdk"
   },
   "scripts": {
-    "start": "nw app",
-    "prestart": "gulp nwjs-copy-ffmpeg",
+    "start": "gulp run-nw",
+    "prestart": "gulp dist-copy-ffmpeg",
     "build": "gulp build"
   },
   "repository": {
