@@ -1,56 +1,50 @@
-if (typeof nw != 'undefined') {
-  NWInit = {
-    initApp: function () {
-      console.log('init app called');
+var gui = require('nw.gui');
 
-      let win = nw.Window.get();
+  console.log('init app called');
 
-      onload = function () {
-          window.location.href = "http://iheartradio.com"
-      };
+  let win = gui.Window.get();
 
-      win.on('minimize', function () {
-        let that = this
-        console.log('minimize called');
-
-        if (typeof nw.Tray == 'undefined') {
-          return;
-        }
-
-        win.hide();
-
-        let tray = new nw.Tray({
-          title: 'Web Music Player',
-          icon: 'img/music.png'
-        });
-
-        //  let menu = new nw.Menu();
-        //  let exit = new nw.MenuItem({
-        //    type: "normal",
-        //    label: "Exit",
-        //    click: function () {
-        //     that.hide(); // Pretend to be closed already
-        //     console.log("We're closing...");
-        //     that.close(true);
-        //    },
-        //    key: "s",
-        //    modifiers: "ctrl-alt",
-        //  });
-        //
-        // menu.append(exit);
-        // tray.menu = menu;
-
-        tray.on('click', function () {
-          console.log('tray clicked');
-
-          win.show();
-
-          tray.remove();
-          tray = null;
-        });
-      });
-    }
+  onload = function () {
+    window.location.href = "http://iheartradio.com"
   };
 
-  NWInit.initApp();
-}
+  win.on('minimize', function () {
+    let that = this
+    console.log('minimize called');
+
+    if (typeof gui.Tray == 'undefined') {
+      return;
+    }
+
+    win.hide();
+
+    let tray = new gui.Tray({
+      title: 'Web Music Player',
+      icon: 'img/music.png'
+    });
+
+     let menu = new nw.Menu();
+     let exit = new nw.MenuItem({
+       type: "normal",
+       label: "Exit",
+       click: function () {
+        that.hide(); // Pretend to be closed already
+        console.log("We're closing...");
+        that.close(true);
+       },
+       key: "s",
+       modifiers: "ctrl-alt",
+     });
+
+    menu.append(exit);
+    tray.menu = menu;
+
+    tray.on('click', function () {
+      console.log('tray clicked');
+
+      win.show();
+
+      tray.remove();
+      tray = null;
+    });
+  });
