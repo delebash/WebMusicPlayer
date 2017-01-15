@@ -7,8 +7,8 @@
     "title": "webmusicplayer",
     "resizable": true,
     "show_in_taskbar": true,
-    "min_width": 650,
-    "min_height": 650
+    "min_width": 1024,
+    "min_height": 768
   },
   "webkit": {
     "plugin": true
