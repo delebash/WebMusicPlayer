@@ -1,0 +1,61 @@
+<html>
+<body>
+<div></div>
+<script>
+
+  // Load library
+  var gui = require('nw.gui');
+
+  // Reference to window and tray
+  var win = gui.Window.get();
+  var tray;
+
+  onload = function () {
+    window.location.href = "http://iheartradio.com"
+    console.log("asdxf")
+  };
+
+  // Get the minimize event
+  win.on('minimize', function () {
+    // Hide window
+    var that = this
+    this.hide();
+
+    // Show tray
+    var tray = new gui.Tray({title: 'Web Music Player', icon: 'img/music.png', tooltip: 'Web Music Player'});
+    // Give it a menu
+
+//    var menu = new gui.Menu();
+//    var exit = new gui.MenuItem({
+//      type: "normal",
+//      icon: "img/media_controls_dark_play.png",
+//      label: "Exit",
+//      click: function () {
+//        that.hide(); // Pretend to be closed already
+//        console.log("We're closing...");
+//        that.close(true);
+//      },
+//      key: "s",
+//      modifiers: "ctrl-alt",
+//    });
+//
+//    menu.append(exit);
+//    tray.menu = menu;
+
+    // Show window and remove tray when clicked
+    tray.on('click', function () {
+      win.show();
+      this.remove();
+      tray = null;
+    });
+  });
+
+//  win.on('close', function () {
+//    this.hide(); // Pretend to be closed already
+//    console.log("We're closing...");
+//    this.close(true);
+//  });
+
+</script>
+</body>
+</html>

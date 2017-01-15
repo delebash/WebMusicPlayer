@@ -2,15 +2,18 @@
   "name": "webmusicplayer",
   "version": "0.1.0",
   "main": "index.html",
-  "single-instance": true,
+  "inject_js_start": "./js/NWInit.js",
   "window": {
     "title": "webmusicplayer",
+    "resizable": true,
+    "show_in_taskbar": true,
     "min_width": 650,
     "min_height": 650
   },
   "webkit": {
     "plugin": true
   },
-  "chromium-args": "--load-plugin=ffmpegsumo.dll --child-clean-exit --disable-direct-composition --allow-running-insecure-content --no-proxy-server --enable-video-player-chromecast-support"
+  "chromium-args": "--load-plugin=ffmpegsumo.dll --child-clean-exit --disable-direct-composition --allow-running-insecure-content",
+  "node-remote": "*://*"
   }
 
